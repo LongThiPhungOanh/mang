@@ -5,26 +5,29 @@
     <title>Title</title>
 </head>
 <body>
-<input type="text" id="Value"/>
-<input type="button" id="btnAdd" value="Add" onclick="add_element_to_array();"/>
-<input type="button" id="btnDisplay" value="Display" onclick="display_array();"/>
+<input type="text" id="theId"/>
+<input type="button" id="btnAdd" value="Add" onclick="addNumber()"/>
+<input type="button" id="btnDisplay" value="Display" onclick="display()"/>
 <div id="result"></div>
 <script>
-    let x = 0;
-    let array = [];
-    function add_element_to_array() {
-        array[x] = document.getElementById("Value").value;
-        alert("Element: " + array[x] + " Added at index " + x);
-        x++;
-        document.getElementById("Value ").value = "";
-    }
-    function display_array() {
-        let a = "<hr/>";
-        for (let i = 0; i < array.length; i++) {
-            a += "Element " + i + " = " + array[i] + "<br/>";
-        }
-        document.getElementById("result").innerHTML = a;
-    }
+
+    var arr = [];
+
+  function addNumber() {
+      var element = document.getElementById("theId").value;
+      arr.push(element);
+      alert("push " + element + " to array success!");
+  }
+
+  function display(){
+      var result = "";
+      for (let i = 0; i < arr.length; i++) {
+          result += "<div>"+ "element "+ arr[i]+ "</div><hr/> ";
+      }
+      document.getElementById("result").innerHTML = result;
+  }
+
+
 </script>
 </body>
 </html>
